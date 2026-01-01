@@ -15,6 +15,11 @@ app.use(cors({
 // Connect to Mongo
 connectDB().then(() => console.log('MongoDB Connected...'));
 
+// Root Route
+app.get('/', (req, res) => {
+    res.send('API is running successfully');
+});
+
 // Use Routes
 app.use('/api', require('./routes/auth'));
 
